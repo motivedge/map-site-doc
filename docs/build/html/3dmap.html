@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Point Cloud Map &#8212; All Maps in One</title>
+    <title>Point Cloud Map Edit &amp; Download (3D) &#8212; All Maps in One</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -24,6 +24,7 @@
     
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     
   <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -35,7 +36,8 @@
     <link rel="shortcut icon" href="_static/me_logo.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Costmap" href="2dmap.html" />
+    <link rel="next" title="SDK Package" href="SDK.html" />
+    <link rel="prev" title="Costmap Edit &amp; Download (2D)" href="2dmap.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -77,20 +79,30 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Contents:
- </span>
-</p>
-<ul class="current nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="general_manage.html">
+   Generate Map Management
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2dmap.html">
-   Costmap
+   Costmap Edit &amp; Download (2D)
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Point Cloud Map
+   Point Cloud Map Edit &amp; Download (3D)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SDK.html">
+   SDK Package
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ROS.html">
+   ROS1 / ROS2
   </a>
  </li>
 </ul>
@@ -167,6 +179,36 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#edit">
+   Edit
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#download-costmap">
+   Download Costmap
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-via-site">
+     Download via site
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#api-fetch-map">
+     API Fetch Map
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -174,19 +216,111 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Point Cloud Map</h1>
+                <h1>Point Cloud Map Edit & Download (3D)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#edit">
+   Edit
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#download-costmap">
+   Download Costmap
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-via-site">
+     Download via site
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#api-fetch-map">
+     API Fetch Map
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="section" id="point-cloud-map">
-<h1>Point Cloud Map<a class="headerlink" href="#point-cloud-map" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="point-cloud-map-edit-download-3d">
+<h1>Point Cloud Map Edit &amp; Download (3D)<a class="headerlink" href="#point-cloud-map-edit-download-3d" title="Permalink to this headline">¶</a></h1>
+<p>Below is the Point Cloud Map details page.
+We could use the mouse wheel to zoom in/out and right click&amp;drag to move around the map.</p>
+<img alt="_images/pcd_page.png" class="align-center" src="_images/pcd_page.png" />
+<div class="section" id="edit">
+<h2>Edit<a class="headerlink" href="#edit" title="Permalink to this headline">¶</a></h2>
+<p>Coming soon…</p>
+</div>
+<div class="section" id="download-costmap">
+<h2>Download Costmap<a class="headerlink" href="#download-costmap" title="Permalink to this headline">¶</a></h2>
+<p>Our algorithm will generate 2D costmap automatically. The costmap is 100% compatable with robots.</p>
+<div class="section" id="download-via-site">
+<h3>Download via site<a class="headerlink" href="#download-via-site" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Click <img alt="download_btn" src="_images/download_btn.png" /> on the right side of map details page</p></li>
+<li><p>Input the lider height to the ground and resolution of the costmap</p>
+<img alt="_images/3d_download_input.png" class="align-center" src="_images/3d_download_input.png" />
+</li>
+<li><p>Click <code class="code docutils literal notranslate"><span class="pre">OK</span></code> to download the <code class="code docutils literal notranslate"><span class="pre">map.zip</span></code> to your PC. The <code class="code docutils literal notranslate"><span class="pre">map.zip</span></code> includes:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">map.png</span></code>, the costmap</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">map.yaml</span></code>, the related YAML file of the costmap</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="api-fetch-map">
+<h3>API Fetch Map<a class="headerlink" href="#api-fetch-map" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Click <code class="code docutils literal notranslate"><span class="pre">Profile</span> <span class="pre">&amp;</span> <span class="pre">Token</span></code> link under <img alt="profile_icon" src="_images/profile_icon.png" /> and land to <code class="code docutils literal notranslate"><span class="pre">Profile</span> <span class="pre">&amp;</span> <span class="pre">Token</span></code> page.</p></li>
+<li><p>Click <img alt="access_token_btn" src="_images/access_token_btn.png" /> button and get the token.</p></li>
+<li><p>Download map via our API <em>(bash code)</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -v -o map.zip -X GET <span class="s2">&quot;http://api.motivedge.io/map/MAP_ID/2d?h=0.5&amp;r=0.05&amp;me_token=TOKEN&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">MAP_ID</span></code> could be found in the map details page.
+<em>(Next to the map name)</em></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">me_token</span></code> is the generated token using above button.
+<em>(Required field)</em></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">h</span></code> means the lidar height to the ground.
+<em>(Required field)</em></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">r</span></code> means the 2D map resolution for each pixel.
+<em>(Required field)</em></p></li>
+</ul>
+</li>
+<li><p>The fetched map zip file includes <code class="code docutils literal notranslate"><span class="pre">map.yaml</span></code> and <code class="code docutils literal notranslate"><span class="pre">map.png</span></code> (costmap).
+We could unzip the file <em>(bash code)</em>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip map.zip
+</pre></div>
+</div>
+</li>
+<li><p>Now we could see the map in our system and we could update our robot <code class="code docutils literal notranslate"><span class="pre">map_server</span></code> to use this latest map.</p></li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p><strong>SDK will release soon</strong></p>
+<p>Our SDK is under developing and will be released soon. We don’t need above
+complicated fetch map steps after releasing.</p>
+<p><strong>Only one line of code will finish above all.</strong></p>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -199,8 +333,15 @@
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Costmap</p>
+            <p class="prev-next-title">Costmap Edit &amp; Download (2D)</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="SDK.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">SDK Package</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             

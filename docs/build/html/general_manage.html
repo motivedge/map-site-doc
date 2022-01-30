@@ -24,6 +24,7 @@
     
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     
   <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -35,8 +36,8 @@
     <link rel="shortcut icon" href="_static/me_logo.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Costmap" href="2dmap.html" />
-    <link rel="prev" title="Portal @MotivEdge.io" href="index.html" />
+    <link rel="next" title="Costmap Edit &amp; Download (2D)" href="2dmap.html" />
+    <link rel="prev" title="All Maps in One" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -86,17 +87,22 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2dmap.html">
-   Costmap
+   Costmap Edit &amp; Download (2D)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="3dmap.html">
-   Point Cloud Map
+   Point Cloud Map Edit &amp; Download (3D)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="SDK.html">
    SDK Package
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ROS.html">
+   ROS1 / ROS2
   </a>
  </li>
 </ul>
@@ -252,13 +258,13 @@
 </div>
 <ol class="arabic" start="3">
 <li><p>Upload your 2D or 3D map on the uploading map page.</p>
-<p>3.1. There is no building which you are looking for. Create a new one :).</p>
+<p>3.1. If there is no building which you are looking for, create a new one. :)</p>
 </li>
-<li><p>After uploading, you will see your maps at home page</p></li>
+<li><p>After uploading, you will see your maps at home page.</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Show maps in different ways</p>
+<p><strong>Show maps in different ways</strong></p>
 <p>Toggle or select different display styles. The <code class="code docutils literal notranslate"><span class="pre">Group</span> <span class="pre">Show</span></code> will display all
 version of a map in a row.
 <img alt="display_btns" src="_images/display_btns.png" /></p>
@@ -266,9 +272,41 @@ version of a map in a row.
 </div>
 <div class="section" id="private-public-maps">
 <h2>Private / Public Maps<a class="headerlink" href="#private-public-maps" title="Permalink to this headline">¶</a></h2>
+<p>Currently, we only support <code class="code docutils literal notranslate"><span class="pre">private</span></code> and <code class="code docutils literal notranslate"><span class="pre">public</span></code>, two modes.</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">private</span></code> maps could only be viewed and edited by your-selves.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">public</span></code> maps could be viewed by all users on our site. All users could
+add their own mark points/paths/blocks.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>More than 2 modes - More Permission Control</strong></p>
+<p><em>The Google Doc liked map sharing permission control is under developing.</em></p>
+<p>After deploying the new version, you could share the specific maps to others
+with <code class="code docutils literal notranslate"><span class="pre">view</span></code> / <code class="code docutils literal notranslate"><span class="pre">edit</span></code> permissions.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Toggle <code class="code docutils literal notranslate"><span class="pre">private</span></code> / <code class="code docutils literal notranslate"><span class="pre">public</span></code></p>
+<ol class="arabic simple">
+<li><p>Click into the map details page at home page.</p></li>
+<li><p>Click <img alt="private_toggle" src="_images/private_toggle.png" /> toggle button on the left side of the map details page
+to set map as <code class="code docutils literal notranslate"><span class="pre">private</span></code> or <code class="code docutils literal notranslate"><span class="pre">public</span></code>.</p></li>
+</ol>
+</div>
 </div>
 <div class="section" id="map-version-control">
 <h2>Map Version Control<a class="headerlink" href="#map-version-control" title="Permalink to this headline">¶</a></h2>
+<p>We support different versions for the same map. There are two ways to upload
+new versions.</p>
+<ol class="arabic simple">
+<li><p>Go the map details page, and click upload button on the right side <img alt="upload_btn" src="_images/upload_btn.png" />.
+You only need to upload new map costmap or point cloud. <em>(recommended)</em></p></li>
+<li><p><img alt="create_map" src="_images/create_map.png" /> - Create the new map with same name and same building. Our system
+will make the new map as new version automatically.</p></li>
+</ol>
+<p>After uploading several versions for a same map, you could see the version links
+<img alt="versions" src="_images/versions.png" /> at top of map details page. Clicking each one to view details.</p>
 </div>
 </div>
 
@@ -282,13 +320,13 @@ version of a map in a row.
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Portal &#64;MotivEdge.io</p>
+            <p class="prev-next-title">All Maps in One</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="2dmap.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Costmap</p>
+        <p class="prev-next-title">Costmap Edit &amp; Download (2D)</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

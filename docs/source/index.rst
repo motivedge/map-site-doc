@@ -11,16 +11,16 @@
 .. compound::
    :class: headline_title
 
-   Building high-definition maps for indoor venues and managing maps in portal
+   Building high-definition maps for indoor venues & managing all maps in one portal
 
 
-.. compound:: Features
+.. compound:: Features:
    :class: feature_list
 
    * Manage 2D costmap and 3D point cloud map in our central place
    * Version control for each map
    * Edit map directly on the site and save automatically
-   * Add/update stopping positions, paths and blocking areas online as metadata of the map
+   * Add/update mark points, paths and blocking areas online as metadata of the map
    * Download map and metadata via our API in seconds
    * Generate 2D costmap from 3D point cloud map autmatically
    * Access public maps
@@ -29,8 +29,8 @@
    * ROS1 & ROS2 intergration package (coming soon)
 
 
-Portal @MotivEdge.io
-====================
+All Maps in One
+===============
 
 .. toctree::
    :maxdepth: 2
@@ -39,12 +39,13 @@ Portal @MotivEdge.io
    2dmap
    3dmap
    SDK
+   ROS
 
-.. Remove below parts. Not necessary here TODO
+.. tip:: **New Features / Issues**
 
-Indices and tables
-==================
+   We want to hear more from you, no matter what you want us to add on our site.
+   **Please tell us!**
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   You could raise new wanted features or issues on our doc repo, `here <https://github.com/motivedge/map-site-doc/issues>`_, or you could just email
+   to :code:`tech@motivedge.io`. We will
+   follow up and make the site better.

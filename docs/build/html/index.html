@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portal @MotivEdge.io &#8212; All Maps in One</title>
+    <title>All Maps in One &#8212; All Maps in One</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -24,6 +24,7 @@
     
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     
   <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -85,17 +86,22 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2dmap.html">
-   Costmap
+   Costmap Edit &amp; Download (2D)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="3dmap.html">
-   Point Cloud Map
+   Point Cloud Map Edit &amp; Download (3D)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="SDK.html">
    SDK Package
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ROS.html">
+   ROS1 / ROS2
   </a>
  </li>
 </ul>
@@ -172,24 +178,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Portal @MotivEdge.io
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#indices-and-tables">
-   Indices and tables
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -197,29 +185,11 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Portal @MotivEdge.io</h1>
+                <h1>All Maps in One</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Portal @MotivEdge.io
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#indices-and-tables">
-   Indices and tables
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -228,15 +198,15 @@
                 
   <a class="reference internal image-reference" href="_images/me.png"><img alt="_images/me.png" src="_images/me.png" style="height: 100px;" /></a>
 <div class="headline-title compound">
-<p>Building high-definition maps for indoor venues and managing maps in portal</p>
+<p>Building high-definition maps for indoor venues &amp; managing all maps in one portal</p>
 </div>
 <div class="feature-list compound">
-<p class="compound-first">Features</p>
+<p class="compound-first">Features:</p>
 <ul class="compound-last simple">
 <li><p>Manage 2D costmap and 3D point cloud map in our central place</p></li>
 <li><p>Version control for each map</p></li>
 <li><p>Edit map directly on the site and save automatically</p></li>
-<li><p>Add/update stopping positions, paths and blocking areas online as metadata of the map</p></li>
+<li><p>Add/update mark points, paths and blocking areas online as metadata of the map</p></li>
 <li><p>Download map and metadata via our API in seconds</p></li>
 <li><p>Generate 2D costmap from 3D point cloud map autmatically</p></li>
 <li><p>Access public maps</p></li>
@@ -245,8 +215,8 @@
 <li><p>ROS1 &amp; ROS2 intergration package (coming soon)</p></li>
 </ul>
 </div>
-<div class="section" id="portal-motivedge-io">
-<h1>Portal &#64;MotivEdge.io<a class="headerlink" href="#portal-motivedge-io" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="all-maps-in-one">
+<h1>All Maps in One<a class="headerlink" href="#all-maps-in-one" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="general_manage.html">Generate Map Management</a><ul>
@@ -255,19 +225,30 @@
 <li class="toctree-l2"><a class="reference internal" href="general_manage.html#map-version-control">Map Version Control</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="2dmap.html">Costmap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3dmap.html">Point Cloud Map</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2dmap.html">Costmap Edit &amp; Download (2D)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="2dmap.html#edit-marks-paths-blocks">Edit Marks / Paths / Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2dmap.html#edit-map-image">Edit Map Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2dmap.html#download-map">Download Map</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="3dmap.html">Point Cloud Map Edit &amp; Download (3D)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="3dmap.html#edit">Edit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3dmap.html#download-costmap">Download Costmap</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="SDK.html">SDK Package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ROS.html">ROS1 / ROS2</a></li>
 </ul>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>New Features / Issues</strong></p>
+<p>We want to hear more from you, no matter what you want us to add on our site.
+<strong>Please tell us!</strong></p>
+<p>You could raise new wanted features or issues on our doc repo, <a class="reference external" href="https://github.com/motivedge/map-site-doc/issues">here</a>, or you could just email
+to <code class="code docutils literal notranslate"><span class="pre">tech&#64;motivedge.io</span></code>. We will
+follow up and make the site better.</p>
 </div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
-<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
-</ul>
 </div>
 
 

@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Portal - MotivEdge'
+project = 'Doc - MotivEdge'
 copyright = '2022, MotivEdge'
 author = 'tech@motivedge.io'
 
@@ -66,3 +66,7 @@ html_theme_options = {
 html_logo = "_static/imgs/me_logo.png"
 html_favicon = "_static/imgs/me_logo.png"
 html_title = "All Maps in One"
+
+html_css_files = [
+    'css/custom.css',
+]

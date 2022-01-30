@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Costmap &#8212; All Maps in One</title>
+    <title>Costmap Edit &amp; Download (2D) &#8212; All Maps in One</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -24,6 +24,7 @@
     
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     
   <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
@@ -35,8 +36,8 @@
     <link rel="shortcut icon" href="_static/me_logo.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Point Cloud Map" href="3dmap.html" />
-    <link rel="prev" title="Portal @MotivEdge.io" href="index.html" />
+    <link rel="next" title="Point Cloud Map Edit &amp; Download (3D)" href="3dmap.html" />
+    <link rel="prev" title="Generate Map Management" href="general_manage.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -78,20 +79,30 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Contents:
- </span>
-</p>
-<ul class="current nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="general_manage.html">
+   Generate Map Management
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Costmap
+   Costmap Edit &amp; Download (2D)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="3dmap.html">
-   Point Cloud Map
+   Point Cloud Map Edit &amp; Download (3D)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="SDK.html">
+   SDK Package
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ROS.html">
+   ROS1 / ROS2
   </a>
  </li>
 </ul>
@@ -168,6 +179,58 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#edit-marks-paths-blocks">
+   Edit Marks / Paths / Blocks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#marks">
+     Marks
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#paths">
+     Paths
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#blocks">
+     Blocks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#edit-map-image">
+   Edit Map Image
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#download-map">
+   Download Map
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-via-site">
+     Download via site
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#api-fetch-map">
+     API Fetch Map
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -175,19 +238,243 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Costmap</h1>
+                <h1>Costmap Edit & Download (2D)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#edit-marks-paths-blocks">
+   Edit Marks / Paths / Blocks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#marks">
+     Marks
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#paths">
+     Paths
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#blocks">
+     Blocks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#edit-map-image">
+   Edit Map Image
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#download-map">
+   Download Map
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-via-site">
+     Download via site
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#api-fetch-map">
+     API Fetch Map
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="section" id="costmap">
-<h1>Costmap<a class="headerlink" href="#costmap" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="costmap-edit-download-2d">
+<h1>Costmap Edit &amp; Download (2D)<a class="headerlink" href="#costmap-edit-download-2d" title="Permalink to this headline">¶</a></h1>
+<p>Below is the costmap details page. <em>The YAML detail will be shown on the left sidebar</em>:</p>
+<img alt="_images/costmap_page.png" class="align-center" src="_images/costmap_page.png" />
+<div class="section" id="edit-marks-paths-blocks">
+<h2>Edit Marks / Paths / Blocks<a class="headerlink" href="#edit-marks-paths-blocks" title="Permalink to this headline">¶</a></h2>
+<p>We could add mark points/paths/blocks using the simple UI. After saving them,
+we could get them as <code class="code docutils literal notranslate"><span class="pre">metadata</span></code> when downloading the map.</p>
+<ul class="simple">
+<li><p>Zoom in / Zoom out / Zoom reset <img alt="zoom_btns" src="_images/zoom_btns.png" /> buttons allow you to see details on the map.</p></li>
+<li><p>When mouse moves in the map area, the coords in real-world coordinate system will show
+on the top-right of the map <img alt="mouse_coords" src="_images/mouse_coords.png" /></p></li>
+<li><p>We could also click on the map, the coords of clicked point will be show in popup on the bottom-right
+<img alt="click_coords" src="_images/click_coords.png" /></p></li>
+<li><p>Show / hide axis via <img alt="toggle_axis" src="_images/toggle_axis.png" />. The red is <code class="code docutils literal notranslate"><span class="pre">x</span></code> axis; the green is <code class="code docutils literal notranslate"><span class="pre">y</span></code> axis.</p></li>
+</ul>
+<div class="section" id="marks">
+<h3>Marks<a class="headerlink" href="#marks" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p><strong>Add</strong> new mark point</p>
+<ul class="simple">
+<li><p>Click <img alt="draw_mark" src="_images/draw_mark.png" /> button.</p></li>
+<li><p>Find your mark point position on the map when moving the mouse.</p></li>
+<li><p>Left click the position and <strong>hold &amp; drag</strong> to the expected direction. Then release the mouse.</p></li>
+<li><p>New mark point with its angle will be added on the map locally.</p></li>
+</ul>
+<img alt="_images/mark_sample.png" class="align-center" src="_images/mark_sample.png" />
+</li>
+<li><p><strong>Edit</strong> mark points</p>
+<img alt="_images/marks.png" class="align-center" src="_images/marks.png" />
+<ul class="simple">
+<li><p>Click <code class="code docutils literal notranslate"><span class="pre">Marks</span></code> on the left sidebar to show all the marks</p></li>
+<li><p>Click <img alt="highlight" src="_images/highlight.png" /> to highline the mark on the right map</p></li>
+<li><p>Update the map name on <strong>input field</strong>. The new name will be updated locally</p></li>
+<li><p>Click <img alt="delete" src="_images/delete.png" /> to remove the mark locally</p></li>
+</ul>
+</li>
+<li><p><strong>Save</strong></p>
+<ul>
+<li><p>Do not forget save all updates to the database. Click save button</p>
+<img alt="_images/save_btn.png" src="_images/save_btn.png" />
+</li>
+<li><p><em>OR you could save once after marks / paths / blocks are updated.</em></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="paths">
+<h3>Paths<a class="headerlink" href="#paths" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p><strong>Add</strong> new path</p>
+<ul class="simple">
+<li><p>Click <img alt="draw_path" src="_images/draw_path.png" /> button.</p></li>
+<li><p>Find your positions of path on the map when moving the mouse.</p></li>
+<li><p>Left click the position to add path points one by one.</p></li>
+<li><p>Click <img alt="right" src="_images/right.png" /> to add the new path into the paths locally.
+<em>(The |right| will enable after adding two points for the path)</em></p></li>
+<li><p>Or click <img alt="wrong" src="_images/wrong.png" /> to remove the new path drawing.</p></li>
+</ul>
+<img alt="_images/path_sample.png" class="align-center" src="_images/path_sample.png" />
+</li>
+<li><p><strong>Edit</strong> paths</p>
+<img alt="_images/paths.png" class="align-center" src="_images/paths.png" />
+<ul class="simple">
+<li><p>Click <code class="code docutils literal notranslate"><span class="pre">Paths</span></code> on the left sidebar to show all the paths</p></li>
+<li><p>Click <img alt="highlight" src="_images/highlight.png" /> to highline the path on the right map</p></li>
+<li><p>Update the map name on <strong>input field</strong>. The new name will be updated locally</p></li>
+<li><p>Click <img alt="delete" src="_images/delete.png" /> to remove the path locally</p></li>
+</ul>
+</li>
+<li><p><strong>Save</strong></p>
+<ul>
+<li><p>Do not forget save all updates to the database. Click save button</p>
+<img alt="_images/save_btn.png" src="_images/save_btn.png" />
+</li>
+<li><p><em>OR you could save once after marks / paths / blocks are updated.</em></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="blocks">
+<h3>Blocks<a class="headerlink" href="#blocks" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p><strong>Add</strong> new block</p>
+<ul class="simple">
+<li><p>Click <img alt="draw_block" src="_images/draw_block.png" /> button.</p></li>
+<li><p>Find your corner positions of block on the map when moving the mouse.</p></li>
+<li><p>Left click the position to add block corners one by one.</p></li>
+<li><p>Click <img alt="right" src="_images/right.png" /> to add the new block into the blocks locally.
+<em>(The |right| will enable after adding one corner for the block)</em></p></li>
+<li><p>Or click <img alt="wrong" src="_images/wrong.png" /> to remove the new block drawing.</p></li>
+</ul>
+<img alt="_images/block_sample.png" class="align-center" src="_images/block_sample.png" />
+</li>
+<li><p><strong>Edit</strong> blocks</p>
+<img alt="_images/blocks.png" class="align-center" src="_images/blocks.png" />
+<ul class="simple">
+<li><p>Click <code class="code docutils literal notranslate"><span class="pre">Blocks</span></code> on the left sidebar to show all the blocks</p></li>
+<li><p>Click <img alt="highlight" src="_images/highlight.png" /> to highline the block on the right map</p></li>
+<li><p>Update the map name on <strong>input field</strong>. The new name will be updated locally</p></li>
+<li><p>Click <img alt="delete" src="_images/delete.png" /> to remove the block locally</p></li>
+</ul>
+</li>
+<li><p><strong>Save</strong></p>
+<ul>
+<li><p>Do not forget save all updates to the database. Click save button</p>
+<img alt="_images/save_btn.png" src="_images/save_btn.png" />
+</li>
+<li><p><em>OR you could save once after marks / paths / blocks are updated.</em></p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p><strong>Don’t forget SAVE</strong></p>
+<p>Save all updates to the database. Click save button <img alt="save_btn" src="_images/save_btn.png" /></p>
+<p><em>Our new version will save data automatically. It’s on the way!</em></p>
+</div>
+</div>
+</div>
+<div class="section" id="edit-map-image">
+<h2>Edit Map Image<a class="headerlink" href="#edit-map-image" title="Permalink to this headline">¶</a></h2>
+<p>Edit the image directly on the map image. You don’t need to open GIMP again.</p>
+<p><em>Currently, it’s under developing. Coming soon…</em></p>
+</div>
+<div class="section" id="download-map">
+<h2>Download Map<a class="headerlink" href="#download-map" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="download-via-site">
+<h3>Download via site<a class="headerlink" href="#download-via-site" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Click <img alt="download_btn" src="_images/download_btn.png" /> on the right side of map details page</p></li>
+<li><p>Save <code class="code docutils literal notranslate"><span class="pre">map.zip</span></code> to your PC. The <code class="code docutils literal notranslate"><span class="pre">map.zip</span></code> includes:</p>
+<ul>
+<li><p><code class="code docutils literal notranslate"><span class="pre">map.png</span></code>, the costmap</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">map.yaml</span></code>, the related YAML file of the costmap</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">metadata.yaml</span></code>, the file contains mark points / paths / blocks
+<em>(don’t forget save button!)</em></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="api-fetch-map">
+<h3>API Fetch Map<a class="headerlink" href="#api-fetch-map" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Click <code class="code docutils literal notranslate"><span class="pre">Profile</span> <span class="pre">&amp;</span> <span class="pre">Token</span></code> link under <img alt="profile_icon" src="_images/profile_icon.png" /> and land to <code class="code docutils literal notranslate"><span class="pre">Profile</span> <span class="pre">&amp;</span> <span class="pre">Token</span></code> page.</p></li>
+<li><p>Click <img alt="access_token_btn" src="_images/access_token_btn.png" /> button and get the token.</p></li>
+<li><p>Download map via our API <em>(bash code)</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -v -o map.zip -X GET <span class="s2">&quot;http://api.motivedge.io/map/MAP_ID/2d?me_token=TOKEN&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">MAP_ID</span></code> could be found in the map details page.
+<em>(Next to the map name)</em></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">me_token</span></code> is the generated token using above button.
+<em>(Required field)</em></p></li>
+</ul>
+</li>
+<li><p>The fetched map zip file includes <code class="code docutils literal notranslate"><span class="pre">map.yaml</span></code>, <code class="code docutils literal notranslate"><span class="pre">map.png</span></code> (costmap), and <code class="code docutils literal notranslate"><span class="pre">metadata.yaml</span></code>
+(the marks points / paths / blocks). We could unzip the file <em>(bash code)</em>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip map.zip
+</pre></div>
+</div>
+</li>
+<li><p>Now we could see the map in our system and we could update our robot <code class="code docutils literal notranslate"><span class="pre">map_server</span></code> to use this latest map.</p></li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p><strong>SDK will release soon</strong></p>
+<p>Our SDK is under developing and will be released soon. We don’t need above
+complicated fetch map steps after releasing.</p>
+<p><strong>Only one line of code will finish above all.</strong></p>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -196,17 +483,17 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="general_manage.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Portal &#64;MotivEdge.io</p>
+            <p class="prev-next-title">Generate Map Management</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="3dmap.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Point Cloud Map</p>
+        <p class="prev-next-title">Point Cloud Map Edit &amp; Download (3D)</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
