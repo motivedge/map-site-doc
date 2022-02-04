@@ -10,7 +10,6 @@ Below is the costmap details page. *The YAML detail will be shown on the left si
 .. |delete| image:: ./_static/imgs/screenshots/delete.png
 .. |right| image:: ./_static/imgs/screenshots/right.png
 .. |wrong| image:: ./_static/imgs/screenshots/wrong.png
-.. |save_btn| image:: ./_static/imgs/screenshots/save_btn.png
 .. |download_btn| image:: ./_static/imgs/screenshots/download_btn.png
 .. |mouse_coords| image:: ./_static/imgs/screenshots/mouse_coords.png
 
@@ -22,7 +21,7 @@ Edit Marks / Paths / Blocks
 .. |click_coords| image:: ./_static/imgs/screenshots/click_coords.png
 .. |toggle_axis| image:: ./_static/imgs/screenshots/toggle_axis.png
 
-We could add mark points/paths/blocks using the simple UI. After saving them,
+We could add mark points/paths/blocks using the simple UI. After adding them,
 we could get them as :code:`metadata` when downloading the map.
 
 * Zoom in / Zoom out / Zoom reset |zoom_btns| buttons allow you to see details on the map.
@@ -30,7 +29,7 @@ we could get them as :code:`metadata` when downloading the map.
 * When mouse moves in the map area, the coords in real-world coordinate system will show
   on the top-right of the map |mouse_coords|
 
-* We could also click on the map, the coords of clicked point will be show in popup on the bottom-right
+* We could also click on the map, the coords of clicked point will be shown in popup on the bottom-right
   |click_coords|
 
 * Show / hide axis via |toggle_axis|. The red is :code:`x` axis; the green is :code:`y` axis.
@@ -45,7 +44,7 @@ Marks
   * Click |draw_mark| button.
   * Find your mark point position on the map when moving the mouse.
   * Left click the position and **hold & drag** to the expected direction. Then release the mouse.
-  * New mark point with its angle will be added on the map locally.
+  * New mark point with its angle will be added on the map.
 
   .. image:: ./_static/imgs/screenshots/mark_sample.png
     :align: center
@@ -56,18 +55,11 @@ Marks
   .. image:: ./_static/imgs/screenshots/marks.png
     :align: center
 
-  * Click :code:`Marks` on the left sidebar to show all the marks
-  * Click |highlight| to highline the mark on the right map
-  * Update the map name on **input field**. The new name will be updated locally
-  * Click |delete| to remove the mark locally
+  * Click :code:`Marks` on the left sidebar to show all the marks.
+  * Click |highlight| to highline the mark on the right map.
+  * Update the map name on **input field**. The new name will be updated directly.
+  * Click |delete| to remove the mark.
 
-* **Save**
-
-  * Do not forget save all updates to the database. Click save button
-
-    .. image:: ./_static/imgs/screenshots/save_btn.png
-
-  * *OR you could save once after marks / paths / blocks are updated.*
 
 Paths
 """""
@@ -79,9 +71,9 @@ Paths
   * Click |draw_path| button.
   * Find your positions of path on the map when moving the mouse.
   * Left click the position to add path points one by one.
-  * Click |right| to add the new path into the paths locally.
-    *(The |right| will enable after adding two points for the path)*
-  * Or click |wrong| to remove the new path drawing.
+  * Click |right| to add the new path into the paths.
+    (The |right| will enable after adding two points for the path)
+  * Or click |wrong| to remove the new drawing path.
 
   .. image:: ./_static/imgs/screenshots/path_sample.png
     :align: center
@@ -92,18 +84,10 @@ Paths
   .. image:: ./_static/imgs/screenshots/paths.png
     :align: center
 
-  * Click :code:`Paths` on the left sidebar to show all the paths
-  * Click |highlight| to highline the path on the right map
-  * Update the map name on **input field**. The new name will be updated locally
-  * Click |delete| to remove the path locally
-
-* **Save**
-
-  * Do not forget save all updates to the database. Click save button
-
-    .. image:: ./_static/imgs/screenshots/save_btn.png
-
-  * *OR you could save once after marks / paths / blocks are updated.*
+  * Click :code:`Paths` on the left sidebar to show all the paths.
+  * Click |highlight| to highline the path on the right map.
+  * Update the map name on **input field**. The new name will be updated directly.
+  * Click |delete| to remove the path.
 
 
 Blocks
@@ -116,8 +100,8 @@ Blocks
   * Click |draw_block| button.
   * Find your corner positions of block on the map when moving the mouse.
   * Left click the position to add block corners one by one.
-  * Click |right| to add the new block into the blocks locally.
-    *(The |right| will enable after adding one corner for the block)*
+  * Click |right| to add the new block into the blocks.
+    (The |right| will enable after adding one corner for the block)
   * Or click |wrong| to remove the new block drawing.
 
   .. image:: ./_static/imgs/screenshots/block_sample.png
@@ -129,25 +113,10 @@ Blocks
   .. image:: ./_static/imgs/screenshots/blocks.png
     :align: center
 
-  * Click :code:`Blocks` on the left sidebar to show all the blocks
-  * Click |highlight| to highline the block on the right map
-  * Update the map name on **input field**. The new name will be updated locally
-  * Click |delete| to remove the block locally
-
-* **Save**
-
-  * Do not forget save all updates to the database. Click save button
-
-    .. image:: ./_static/imgs/screenshots/save_btn.png
-
-  * *OR you could save once after marks / paths / blocks are updated.*
-
-
-.. attention:: **Don't forget SAVE**
-
-   Save all updates to the database. Click save button |save_btn|
-
-   *Our new version will save data automatically. It's on the way!*
+  * Click :code:`Blocks` on the left sidebar to show all the blocks.
+  * Click |highlight| to highline the block on the right map.
+  * Update the map name on **input field**. The new name will be updated directly.
+  * Click |delete| to remove the block.
 
 
 Edit Map Image
@@ -170,7 +139,6 @@ Download via site
   * :code:`map.png`, the costmap
   * :code:`map.yaml`, the related YAML file of the costmap
   * :code:`metadata.yaml`, the file contains mark points / paths / blocks
-    *(don't forget save button!)*
 
 
 API Fetch Map

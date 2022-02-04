@@ -307,13 +307,13 @@
 <img alt="_images/costmap_page.png" class="align-center" src="_images/costmap_page.png" />
 <div class="section" id="edit-marks-paths-blocks">
 <h2>Edit Marks / Paths / Blocks<a class="headerlink" href="#edit-marks-paths-blocks" title="Permalink to this headline">¶</a></h2>
-<p>We could add mark points/paths/blocks using the simple UI. After saving them,
+<p>We could add mark points/paths/blocks using the simple UI. After adding them,
 we could get them as <code class="code docutils literal notranslate"><span class="pre">metadata</span></code> when downloading the map.</p>
 <ul class="simple">
 <li><p>Zoom in / Zoom out / Zoom reset <img alt="zoom_btns" src="_images/zoom_btns.png" /> buttons allow you to see details on the map.</p></li>
 <li><p>When mouse moves in the map area, the coords in real-world coordinate system will show
 on the top-right of the map <img alt="mouse_coords" src="_images/mouse_coords.png" /></p></li>
-<li><p>We could also click on the map, the coords of clicked point will be show in popup on the bottom-right
+<li><p>We could also click on the map, the coords of clicked point will be shown in popup on the bottom-right
 <img alt="click_coords" src="_images/click_coords.png" /></p></li>
 <li><p>Show / hide axis via <img alt="toggle_axis" src="_images/toggle_axis.png" />. The red is <code class="code docutils literal notranslate"><span class="pre">x</span></code> axis; the green is <code class="code docutils literal notranslate"><span class="pre">y</span></code> axis.</p></li>
 </ul>
@@ -325,25 +325,17 @@ on the top-right of the map <img alt="mouse_coords" src="_images/mouse_coords.pn
 <li><p>Click <img alt="draw_mark" src="_images/draw_mark.png" /> button.</p></li>
 <li><p>Find your mark point position on the map when moving the mouse.</p></li>
 <li><p>Left click the position and <strong>hold &amp; drag</strong> to the expected direction. Then release the mouse.</p></li>
-<li><p>New mark point with its angle will be added on the map locally.</p></li>
+<li><p>New mark point with its angle will be added on the map.</p></li>
 </ul>
 <img alt="_images/mark_sample.png" class="align-center" src="_images/mark_sample.png" />
 </li>
 <li><p><strong>Edit</strong> mark points</p>
 <img alt="_images/marks.png" class="align-center" src="_images/marks.png" />
 <ul class="simple">
-<li><p>Click <code class="code docutils literal notranslate"><span class="pre">Marks</span></code> on the left sidebar to show all the marks</p></li>
-<li><p>Click <img alt="highlight" src="_images/highlight.png" /> to highline the mark on the right map</p></li>
-<li><p>Update the map name on <strong>input field</strong>. The new name will be updated locally</p></li>
-<li><p>Click <img alt="delete" src="_images/delete.png" /> to remove the mark locally</p></li>
-</ul>
-</li>
-<li><p><strong>Save</strong></p>
-<ul>
-<li><p>Do not forget save all updates to the database. Click save button</p>
-<img alt="_images/save_btn.png" src="_images/save_btn.png" />
-</li>
-<li><p><em>OR you could save once after marks / paths / blocks are updated.</em></p></li>
+<li><p>Click <code class="code docutils literal notranslate"><span class="pre">Marks</span></code> on the left sidebar to show all the marks.</p></li>
+<li><p>Click <img alt="highlight" src="_images/highlight.png" /> to highline the mark on the right map.</p></li>
+<li><p>Update the map name on <strong>input field</strong>. The new name will be updated directly.</p></li>
+<li><p>Click <img alt="delete" src="_images/delete.png" /> to remove the mark.</p></li>
 </ul>
 </li>
 </ul>
@@ -356,27 +348,19 @@ on the top-right of the map <img alt="mouse_coords" src="_images/mouse_coords.pn
 <li><p>Click <img alt="draw_path" src="_images/draw_path.png" /> button.</p></li>
 <li><p>Find your positions of path on the map when moving the mouse.</p></li>
 <li><p>Left click the position to add path points one by one.</p></li>
-<li><p>Click <img alt="right" src="_images/right.png" /> to add the new path into the paths locally.
-<em>(The |right| will enable after adding two points for the path)</em></p></li>
-<li><p>Or click <img alt="wrong" src="_images/wrong.png" /> to remove the new path drawing.</p></li>
+<li><p>Click <img alt="right" src="_images/right.png" /> to add the new path into the paths.
+(The <img alt="right" src="_images/right.png" /> will enable after adding two points for the path)</p></li>
+<li><p>Or click <img alt="wrong" src="_images/wrong.png" /> to remove the new drawing path.</p></li>
 </ul>
 <img alt="_images/path_sample.png" class="align-center" src="_images/path_sample.png" />
 </li>
 <li><p><strong>Edit</strong> paths</p>
 <img alt="_images/paths.png" class="align-center" src="_images/paths.png" />
 <ul class="simple">
-<li><p>Click <code class="code docutils literal notranslate"><span class="pre">Paths</span></code> on the left sidebar to show all the paths</p></li>
-<li><p>Click <img alt="highlight" src="_images/highlight.png" /> to highline the path on the right map</p></li>
-<li><p>Update the map name on <strong>input field</strong>. The new name will be updated locally</p></li>
-<li><p>Click <img alt="delete" src="_images/delete.png" /> to remove the path locally</p></li>
-</ul>
-</li>
-<li><p><strong>Save</strong></p>
-<ul>
-<li><p>Do not forget save all updates to the database. Click save button</p>
-<img alt="_images/save_btn.png" src="_images/save_btn.png" />
-</li>
-<li><p><em>OR you could save once after marks / paths / blocks are updated.</em></p></li>
+<li><p>Click <code class="code docutils literal notranslate"><span class="pre">Paths</span></code> on the left sidebar to show all the paths.</p></li>
+<li><p>Click <img alt="highlight" src="_images/highlight.png" /> to highline the path on the right map.</p></li>
+<li><p>Update the map name on <strong>input field</strong>. The new name will be updated directly.</p></li>
+<li><p>Click <img alt="delete" src="_images/delete.png" /> to remove the path.</p></li>
 </ul>
 </li>
 </ul>
@@ -389,8 +373,8 @@ on the top-right of the map <img alt="mouse_coords" src="_images/mouse_coords.pn
 <li><p>Click <img alt="draw_block" src="_images/draw_block.png" /> button.</p></li>
 <li><p>Find your corner positions of block on the map when moving the mouse.</p></li>
 <li><p>Left click the position to add block corners one by one.</p></li>
-<li><p>Click <img alt="right" src="_images/right.png" /> to add the new block into the blocks locally.
-<em>(The |right| will enable after adding one corner for the block)</em></p></li>
+<li><p>Click <img alt="right" src="_images/right.png" /> to add the new block into the blocks.
+(The <img alt="right" src="_images/right.png" /> will enable after adding one corner for the block)</p></li>
 <li><p>Or click <img alt="wrong" src="_images/wrong.png" /> to remove the new block drawing.</p></li>
 </ul>
 <img alt="_images/block_sample.png" class="align-center" src="_images/block_sample.png" />
@@ -398,27 +382,13 @@ on the top-right of the map <img alt="mouse_coords" src="_images/mouse_coords.pn
 <li><p><strong>Edit</strong> blocks</p>
 <img alt="_images/blocks.png" class="align-center" src="_images/blocks.png" />
 <ul class="simple">
-<li><p>Click <code class="code docutils literal notranslate"><span class="pre">Blocks</span></code> on the left sidebar to show all the blocks</p></li>
-<li><p>Click <img alt="highlight" src="_images/highlight.png" /> to highline the block on the right map</p></li>
-<li><p>Update the map name on <strong>input field</strong>. The new name will be updated locally</p></li>
-<li><p>Click <img alt="delete" src="_images/delete.png" /> to remove the block locally</p></li>
-</ul>
-</li>
-<li><p><strong>Save</strong></p>
-<ul>
-<li><p>Do not forget save all updates to the database. Click save button</p>
-<img alt="_images/save_btn.png" src="_images/save_btn.png" />
-</li>
-<li><p><em>OR you could save once after marks / paths / blocks are updated.</em></p></li>
+<li><p>Click <code class="code docutils literal notranslate"><span class="pre">Blocks</span></code> on the left sidebar to show all the blocks.</p></li>
+<li><p>Click <img alt="highlight" src="_images/highlight.png" /> to highline the block on the right map.</p></li>
+<li><p>Update the map name on <strong>input field</strong>. The new name will be updated directly.</p></li>
+<li><p>Click <img alt="delete" src="_images/delete.png" /> to remove the block.</p></li>
 </ul>
 </li>
 </ul>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p><strong>Don’t forget SAVE</strong></p>
-<p>Save all updates to the database. Click save button <img alt="save_btn" src="_images/save_btn.png" /></p>
-<p><em>Our new version will save data automatically. It’s on the way!</em></p>
-</div>
 </div>
 </div>
 <div class="section" id="edit-map-image">
@@ -436,8 +406,7 @@ on the top-right of the map <img alt="mouse_coords" src="_images/mouse_coords.pn
 <ul>
 <li><p><code class="code docutils literal notranslate"><span class="pre">map.png</span></code>, the costmap</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">map.yaml</span></code>, the related YAML file of the costmap</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">metadata.yaml</span></code>, the file contains mark points / paths / blocks
-<em>(don’t forget save button!)</em></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">metadata.yaml</span></code>, the file contains mark points / paths / blocks</p></li>
 </ul>
 </li>
 </ul>
