@@ -55,8 +55,8 @@ API Fetch Map
     *(Required field)*
   * :code:`h` means the lidar height to the ground.
     *(Required field)*
-  * :code:`r` means the 2D map resolution for each pixel.
-    *(Required field)*
+  * :code:`r` means the 2D map resolution for each pixel. Default value is 0.05.
+    *(Optional field)*
 
 * The fetched map zip file includes :code:`map.yaml` and :code:`map.png` (costmap).
   We could unzip the file *(bash code)*:
