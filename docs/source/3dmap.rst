@@ -41,35 +41,45 @@ API Fetch Map
 .. |profile_icon| image:: ./_static/imgs/screenshots/profile_icon.png
 .. |access_token_btn| image:: ./_static/imgs/screenshots/access_token_btn.png
 
-* Click :code:`Profile & Token` link under |profile_icon| and land to :code:`Profile & Token` page.
-* Click |access_token_btn| button and get the token.
-* Download map via our API *(bash code)*
+1. **Use our SDK (recommended)**. For more options or details, please check `SDK <SDK.html>`_ page.
 
-  .. code:: bash
+   * Click :code:`Profile & Token` link under |profile_icon| and land to :code:`Profile & Token` page.
+   * Click |access_token_btn| button and get the token.
+   * Install our sdk.
 
-     curl -v -o map.zip -X GET "http://api.motivedge.io/map/MAP_ID/2d?h=0.5&r=0.05&me_token=TOKEN"
+     .. code:: bash
 
-  * :code:`MAP_ID` could be found in the map details page.
-    *(Next to the map name)*
-  * :code:`me_token` is the generated token using above button.
-    *(Required field)*
-  * :code:`h` means the lidar height to the ground.
-    *(Required field)*
-  * :code:`r` means the 2D map resolution for each pixel. Default value is 0.05.
-    *(Optional field)*
+        pip install git+https://github.com/motivedge/python_sdk.git
 
-* The fetched map zip file includes :code:`map.yaml` and :code:`map.png` (costmap).
-  We could unzip the file *(bash code)*:
+   * Find the target map's :code:`MAP_ID` in the map details page.
+   * Use `download.py` script which is in our sdk :code:`scripts` folder to fetch map
 
-  .. code:: bash
+     .. code:: bash
 
-     unzip map.zip
+        python scripts/download.py -m <map_id> -p <target_folder> --lidar_height <float_value> --resolution <float_value> --me_token <token>
 
-* Now we could see the map in our system and we could update our robot :code:`map_server` to use this latest map.
+2. Use :code:`curl` and :code:`unzip` fetch map.
 
-.. attention:: **SDK will release soon**
+   * Click :code:`Profile & Token` link under |profile_icon| and land to :code:`Profile & Token` page.
+   * Click |access_token_btn| button and get the token.
+   * Download map via our API *(bash code)*
 
-   Our SDK is under developing and will be released soon. We don't need above
-   complicated fetch map steps after releasing.
+     .. code:: bash
 
-   **Only one line of code will finish above all.**
+        curl -v -o map.zip -X GET "http://api.motivedge.io/map/MAP_ID/2d?h=0.5&r=0.05&me_token=TOKEN"
+
+     * :code:`MAP_ID` could be found in the map details page.
+       *(Next to the map name)*
+     * :code:`me_token` is the generated token using above button.
+       *(Required field)*
+     * :code:`h` means the lidar height to the ground.
+       *(Required field)*
+     * :code:`r` means the 2D map resolution for each pixel. Default value is 0.05.
+       *(Optional field)*
+
+   * The fetched map zip file includes :code:`map.yaml` and :code:`map.png` (costmap).
+     We could unzip the file *(bash code)*:
+
+     .. code:: bash
+
+        unzip map.zip

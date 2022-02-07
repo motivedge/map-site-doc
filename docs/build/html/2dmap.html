@@ -413,35 +413,44 @@ on the top-right of the map <img alt="mouse_coords" src="_images/mouse_coords.pn
 </div>
 <div class="section" id="api-fetch-map">
 <h3>API Fetch Map<a class="headerlink" href="#api-fetch-map" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p><strong>Use our SDK (recommended)</strong>. For more options or details, please check <a class="reference external" href="SDK.html">SDK</a> page.</p>
 <ul>
 <li><p>Click <code class="code docutils literal notranslate"><span class="pre">Profile</span> <span class="pre">&amp;</span> <span class="pre">Token</span></code> link under <img alt="profile_icon" src="_images/profile_icon.png" /> and land to <code class="code docutils literal notranslate"><span class="pre">Profile</span> <span class="pre">&amp;</span> <span class="pre">Token</span></code> page.</p></li>
 <li><p>Click <img alt="access_token_btn" src="_images/access_token_btn.png" /> button and get the token.</p></li>
+<li><p>Install our sdk.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install git+https://github.com/motivedge/python_sdk.git
+</pre></div>
+</div>
+</li>
+<li><p>Find the target map’s <code class="code docutils literal notranslate"><span class="pre">MAP_ID</span></code> in the map details page.</p></li>
+<li><p>Use <cite>download.py</cite> script which is in our sdk <code class="code docutils literal notranslate"><span class="pre">scripts</span></code> folder to fetch map</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python scripts/download.py -m &lt;map_id&gt; -p &lt;target_folder&gt; --me_token &lt;token&gt;
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Use <code class="code docutils literal notranslate"><span class="pre">curl</span></code> and <code class="code docutils literal notranslate"><span class="pre">unzip</span></code> fetch map.</p>
+<ul>
 <li><p>Download map via our API <em>(bash code)</em></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -v -o map.zip -X GET <span class="s2">&quot;http://api.motivedge.io/map/MAP_ID/2d?me_token=TOKEN&quot;</span>
 </pre></div>
 </div>
-<ul class="simple">
+</li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">MAP_ID</span></code> could be found in the map details page.
 <em>(Next to the map name)</em></p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">me_token</span></code> is the generated token using above button.
 <em>(Required field)</em></p></li>
-</ul>
-</li>
 <li><p>The fetched map zip file includes <code class="code docutils literal notranslate"><span class="pre">map.yaml</span></code>, <code class="code docutils literal notranslate"><span class="pre">map.png</span></code> (costmap), and <code class="code docutils literal notranslate"><span class="pre">metadata.yaml</span></code>
 (the marks points / paths / blocks). We could unzip the file <em>(bash code)</em>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip map.zip
 </pre></div>
 </div>
 </li>
-<li><p>Now we could see the map in our system and we could update our robot <code class="code docutils literal notranslate"><span class="pre">map_server</span></code> to use this latest map.</p></li>
 </ul>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p><strong>SDK will release soon</strong></p>
-<p>Our SDK is under developing and will be released soon. We don’t need above
-complicated fetch map steps after releasing.</p>
-<p><strong>Only one line of code will finish above all.</strong></p>
-</div>
+</li>
+</ol>
 </div>
 </div>
 </div>

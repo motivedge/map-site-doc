@@ -179,6 +179,51 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-requirements">
+   Pre-requirements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-use">
+   How to use
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sdk-client">
+     SDK Client
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#script-from-console">
+     Script from Console
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contributing">
+   Contributing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#license">
+   License
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -191,6 +236,51 @@
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-requirements">
+   Pre-requirements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-use">
+   How to use
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sdk-client">
+     SDK Client
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#script-from-console">
+     Script from Console
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contributing">
+   Contributing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#license">
+   License
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -199,7 +289,98 @@
                 
   <div class="section" id="sdk-package">
 <h1>SDK Package<a class="headerlink" href="#sdk-package" title="Permalink to this headline">¶</a></h1>
-<p>Coming soon…</p>
+<p>Python SDK to download map directly. Our code is open source at <a class="reference external" href="https://github.com/motivedge/python_sdk">repo: python sdk</a></p>
+<p>It provides the <code class="code docutils literal notranslate"><span class="pre">Client</span></code> class and the script <code class="code docutils literal notranslate"><span class="pre">download.py</span></code> to download map seamlessly.</p>
+<div class="section" id="pre-requirements">
+<h2>Pre-requirements<a class="headerlink" href="#pre-requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Python &gt;= 3.6</p></li>
+<li><p>An account at <a class="reference external" href="https://portal.motivedge.io/">Portal Motivedge</a></p></li>
+</ul>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install git+https://github.com/motivedge/python_sdk.git
+</pre></div>
+</div>
+<p><em>We will put on pypi later.</em></p>
+</div>
+<div class="section" id="how-to-use">
+<h2>How to use<a class="headerlink" href="#how-to-use" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Get API token from <a class="reference external" href="https://portal.motivedge.io/profile">profile &amp; token page</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ME_TOKEN</span><span class="o">=</span>&lt;api_token&gt;
+</pre></div>
+</div>
+</li>
+<li><p>Find the target map’s <code class="code docutils literal notranslate"><span class="pre">MAP_ID</span></code>. We could find this <code class="code docutils literal notranslate"><span class="pre">ID</span></code> at map details page of our portal site. It’s next to the map name.</p></li>
+</ol>
+<div class="section" id="sdk-client">
+<h3>SDK Client<a class="headerlink" href="#sdk-client" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>CostMap/2D map with <code class="code docutils literal notranslate"><span class="pre">Client</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">motivedge</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">client</span><span class="o">.</span><span class="n">download_map</span><span class="p">(</span><span class="o">&lt;</span><span class="n">map_id</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The downloaded maps folder will be saved in <code class="code docutils literal notranslate"><span class="pre">/tmp/motivedge_map_&lt;map_id&gt;</span></code>. It contains:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">/tmp/motivedge_map_&lt;map_id&gt;/maps/map.png</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">/tmp/motivedge_map_&lt;map_id&gt;/maps/map.yaml</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">/tmp/motivedge_map_&lt;map_id&gt;/maps/metadata.yaml</span></code></p></li>
+</ul>
+<p>If you want to save into different folder, you could do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">client</span><span class="o">.</span><span class="n">download_map</span><span class="p">(</span><span class="o">&lt;</span><span class="n">map_id</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">path</span><span class="o">=&lt;</span><span class="n">target_folder</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Costmap from point cloud/3D map with <code class="code docutils literal notranslate"><span class="pre">Client</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">motivedge</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
+<span class="n">client</span><span class="o">.</span><span class="n">download_map</span><span class="p">(</span><span class="o">&lt;</span><span class="n">map_id</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">lidar_height</span><span class="o">=&lt;</span><span class="n">float_value</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">path</span><span class="o">=&lt;</span><span class="n">target_folder</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The default downloaded folder is same with above <code class="code docutils literal notranslate"><span class="pre">/tmp/motivedge_map_&lt;map_id&gt;</span></code>.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="script-from-console">
+<h3>Script from Console<a class="headerlink" href="#script-from-console" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Costmap/2D map.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python scripts/download.py -m &lt;map_id&gt; -p &lt;target_folder&gt; --me_token &lt;token&gt;
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">ME_TOKEN</span><span class="o">=</span>&lt;token&gt; python scripts/download.py -m &lt;map_id&gt; -p &lt;target_folder&gt;
+</pre></div>
+</div>
+<p><code class="code docutils literal notranslate"><span class="pre">-p</span> <span class="pre">&lt;target_folder&gt;</span></code> is optional. By default, downloaded folder is
+same with above <code class="code docutils literal notranslate"><span class="pre">/tmp/motivedge_map_&lt;map_id&gt;</span></code>.</p>
+</li>
+<li><p>Costmap from point cloud/3D map</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python scripts/download.py -m &lt;map_id&gt; -p &lt;target_folder&gt; --lidar_height &lt;float_value&gt; --me_token &lt;token&gt;
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">ME_TOKEN</span><span class="o">=</span>&lt;token&gt; python scripts/download.py -m &lt;map_id&gt; -p &lt;target_folder&gt; --lidar_height &lt;float_value&gt;
+</pre></div>
+</div>
+<p><code class="code docutils literal notranslate"><span class="pre">-p</span> <span class="pre">&lt;target_folder&gt;</span></code> is optional. By default, downloaded folder is
+same with above <code class="code docutils literal notranslate"><span class="pre">/tmp/motivedge_map_&lt;map_id&gt;</span></code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h2>
+<p>We love sharing and welcome sharing and contributing. Please submit pull requests or raise issues in our <a class="reference external" href="https://github.com/motivedge/python_sdk">repo</a>.</p>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>It’s under MIT License.</p>
+</div>
 </div>
 
 
