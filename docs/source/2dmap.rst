@@ -185,3 +185,53 @@ API Fetch Map
      .. code:: bash
 
         unzip map.zip
+
+
+Downloaded :code:`metadata.yaml` Data Struct
+--------------------------------------------
+
+After downloading above map zip file, it contains :code:`metadata.yaml` file which
+contains all the mark points/paths/blocks which we edited on portal site.
+
+When reading yaml file in programs, its data structure likes below:
+
+.. code:: python
+
+    {
+        "marks": [ {
+            "name": "docking", # mark point's name
+            "x": 1.2, # x coord
+            "y": 3.5, # y coord
+            "rz": 3.14 # point angle to the x axis
+        }, {
+            "name": "table201", # mark point's name
+            "x": 12.4, # x coord
+            "y": 22.5, # y coord
+            "rz": 1.5 # point angle to the x axis
+        },
+        ...], # "marks" contains a list of mark points info
+
+        "paths": [{
+            "name": "path2room1", # path's name
+            "path": [
+                # Contains the ordered list of path points. (x coord, y coord)
+                (-1.5, 0.8), # Start point
+                (-1.7, 0.5), # middle point
+                (-2.3, 1.5), # middle point
+                (-5.2, 2.0) # End point
+            ]
+        },
+        ...], # "paths" contains a list of paths info
+
+        "blocks": [{
+            "name": "dangerzone", # block area's name
+            "corners": [
+                # Contains the list of block corner points. (x coord, y coord)
+                (1.5, 2.8),
+                (1.7, 2.5),
+                (2.3, 3.5),
+                (5.2, 4.0)
+            ]
+        },
+        ...], # "blocks" contains a list of blocks info
+    }

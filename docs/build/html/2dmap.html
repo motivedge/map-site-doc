@@ -228,6 +228,17 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#downloaded-metadata-yaml-data-struct">
+   Downloaded
+   <code class="code docutils literal notranslate">
+    <span class="pre">
+     metadata.yaml
+    </span>
+   </code>
+   Data Struct
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -291,6 +302,17 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#downloaded-metadata-yaml-data-struct">
+   Downloaded
+   <code class="code docutils literal notranslate">
+    <span class="pre">
+     metadata.yaml
+    </span>
+   </code>
+   Data Struct
+  </a>
  </li>
 </ul>
 
@@ -451,6 +473,52 @@ on the top-right of the map <img alt="mouse_coords" src="_images/mouse_coords.pn
 </ul>
 </li>
 </ol>
+</div>
+</div>
+<div class="section" id="downloaded-metadata-yaml-data-struct">
+<h2>Downloaded <code class="code docutils literal notranslate"><span class="pre">metadata.yaml</span></code> Data Struct<a class="headerlink" href="#downloaded-metadata-yaml-data-struct" title="Permalink to this headline">¶</a></h2>
+<p>After downloading above map zip file, it contains <code class="code docutils literal notranslate"><span class="pre">metadata.yaml</span></code> file which
+contains all the mark points/paths/blocks which we edited on portal site.</p>
+<p>When reading yaml file in programs, its data structure likes below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;marks&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;docking&quot;</span><span class="p">,</span> <span class="c1"># mark point&#39;s name</span>
+        <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mf">1.2</span><span class="p">,</span> <span class="c1"># x coord</span>
+        <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mf">3.5</span><span class="p">,</span> <span class="c1"># y coord</span>
+        <span class="s2">&quot;rz&quot;</span><span class="p">:</span> <span class="mf">3.14</span> <span class="c1"># point angle to the x axis</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;table201&quot;</span><span class="p">,</span> <span class="c1"># mark point&#39;s name</span>
+        <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mf">12.4</span><span class="p">,</span> <span class="c1"># x coord</span>
+        <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mf">22.5</span><span class="p">,</span> <span class="c1"># y coord</span>
+        <span class="s2">&quot;rz&quot;</span><span class="p">:</span> <span class="mf">1.5</span> <span class="c1"># point angle to the x axis</span>
+    <span class="p">},</span>
+    <span class="o">...</span><span class="p">],</span> <span class="c1"># &quot;marks&quot; contains a list of mark points info</span>
+
+    <span class="s2">&quot;paths&quot;</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;path2room1&quot;</span><span class="p">,</span> <span class="c1"># path&#39;s name</span>
+        <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="c1"># Contains the ordered list of path points. (x coord, y coord)</span>
+            <span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">),</span> <span class="c1"># Start point</span>
+            <span class="p">(</span><span class="o">-</span><span class="mf">1.7</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="c1"># middle point</span>
+            <span class="p">(</span><span class="o">-</span><span class="mf">2.3</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">),</span> <span class="c1"># middle point</span>
+            <span class="p">(</span><span class="o">-</span><span class="mf">5.2</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span> <span class="c1"># End point</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="o">...</span><span class="p">],</span> <span class="c1"># &quot;paths&quot; contains a list of paths info</span>
+
+    <span class="s2">&quot;blocks&quot;</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;dangerzone&quot;</span><span class="p">,</span> <span class="c1"># block area&#39;s name</span>
+        <span class="s2">&quot;corners&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="c1"># Contains the list of block corner points. (x coord, y coord)</span>
+            <span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">),</span>
+            <span class="p">(</span><span class="mf">1.7</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">),</span>
+            <span class="p">(</span><span class="mf">2.3</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">),</span>
+            <span class="p">(</span><span class="mf">5.2</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">)</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="o">...</span><span class="p">],</span> <span class="c1"># &quot;blocks&quot; contains a list of blocks info</span>
+<span class="p">}</span>
+</pre></div>
 </div>
 </div>
 </div>
