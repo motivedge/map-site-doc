@@ -83,16 +83,19 @@ SDK Client
                 "x": 1.2,
                 "y": 5.0,
                 "rz": 1.57
-            }, ...],
+            }, ... ],
             "paths": [{
                 "name": "P1",
-                "path": [(1.9, 1.1), (2.3, 2.1), (4.3, 5.4), ...] # order points with (x, y) coord
-            }, ...],
+                # order points with (x, y) coord
+                "path": [(1.9, 1.1), (2.3, 2.1), (4.3, 5.4), ...]
+            }, ... ],
             "blocks": [{
                 "name": "B1",
-                "corners": [(1.9, 1.1), (2.3, 2.1), (4.3, 5.4), ...] # block corner points with (x, y) coord
-            }, ...],
+                 # block corner points with (x, y) coord
+                "corners": [(1.9, 1.1), (2.3, 2.1), (4.3, 5.4), ...]
+            }, ... ],
         }
+
 
 
 Script from Console
