@@ -321,7 +321,7 @@
 <li><p>CostMap/2D map with <code class="code docutils literal notranslate"><span class="pre">Client</span></code></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">motivedge</span> <span class="kn">import</span> <span class="n">Client</span>
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
-<span class="n">client</span><span class="o">.</span><span class="n">download_map</span><span class="p">(</span><span class="o">&lt;</span><span class="n">map_id</span><span class="o">&gt;</span><span class="p">)</span>
+<span class="n">download_file_folder</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">download_map</span><span class="p">(</span><span class="o">&lt;</span><span class="n">map_id</span><span class="o">&gt;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The downloaded maps folder will be saved in <code class="code docutils literal notranslate"><span class="pre">/tmp/motivedge_map_&lt;map_id&gt;</span></code>. It contains:</p>
@@ -338,10 +338,36 @@
 <li><p>Costmap from point cloud/3D map with <code class="code docutils literal notranslate"><span class="pre">Client</span></code></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">motivedge</span> <span class="kn">import</span> <span class="n">Client</span>
 <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
-<span class="n">client</span><span class="o">.</span><span class="n">download_map</span><span class="p">(</span><span class="o">&lt;</span><span class="n">map_id</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">lidar_height</span><span class="o">=&lt;</span><span class="n">float_value</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">path</span><span class="o">=&lt;</span><span class="n">target_folder</span><span class="o">&gt;</span><span class="p">)</span>
+<span class="n">download_file_folder</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">download_map</span><span class="p">(</span><span class="o">&lt;</span><span class="n">map_id</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">lidar_height</span><span class="o">=&lt;</span><span class="n">float_value</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">path</span><span class="o">=&lt;</span><span class="n">target_folder</span><span class="o">&gt;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The default downloaded folder is same with above <code class="code docutils literal notranslate"><span class="pre">/tmp/motivedge_map_&lt;map_id&gt;</span></code>.</p>
+</li>
+<li><p>Read mark points/paths/blocks from static methods <code class="code docutils literal notranslate"><span class="pre">read_mark_points</span></code>.
+After running above client download map, we could check data like below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">meta_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">download_file_folder</span><span class="p">,</span> <span class="s2">&quot;metadata.yaml&quot;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">Client</span><span class="o">.</span><span class="n">read_mark_points</span><span class="p">(</span><span class="n">meta_file_path</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Return a <code class="code docutils literal notranslate"><span class="pre">dict</span></code> with following struct</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;marks&quot;</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;N1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mf">1.2</span><span class="p">,</span>
+        <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span>
+        <span class="s2">&quot;rz&quot;</span><span class="p">:</span> <span class="mf">1.57</span>
+    <span class="p">},</span> <span class="o">...</span><span class="p">],</span>
+    <span class="s2">&quot;paths&quot;</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;P1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mf">1.9</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">),</span> <span class="p">(</span><span class="mf">2.3</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">),</span> <span class="p">(</span><span class="mf">4.3</span><span class="p">,</span> <span class="mf">5.4</span><span class="p">),</span> <span class="o">...</span><span class="p">]</span> <span class="c1"># order points with (x, y) coord</span>
+    <span class="p">},</span> <span class="o">...</span><span class="p">],</span>
+    <span class="s2">&quot;blocks&quot;</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;B1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;corners&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="mf">1.9</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">),</span> <span class="p">(</span><span class="mf">2.3</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">),</span> <span class="p">(</span><span class="mf">4.3</span><span class="p">,</span> <span class="mf">5.4</span><span class="p">),</span> <span class="o">...</span><span class="p">]</span> <span class="c1"># block corner points with (x, y) coord</span>
+    <span class="p">},</span> <span class="o">...</span><span class="p">],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </li>
 </ul>
 </div>
