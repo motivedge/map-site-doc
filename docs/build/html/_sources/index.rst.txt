@@ -39,7 +39,8 @@ All Maps in One
    2dmap
    3dmap
    SDK
-   ROS
+   ROS1
+   ROS2
 
 .. tip:: **New Features / Issues**
 

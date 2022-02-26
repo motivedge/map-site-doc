@@ -140,4 +140,4 @@ We love sharing and welcome sharing and contributing. Please submit pull request
 License
 -------
 
-It's under MIT License.
+It's under Apache License 2.0 License.

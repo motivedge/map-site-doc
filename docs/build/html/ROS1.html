@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Point Cloud Map Edit &amp; Download (3D) &#8212; All Maps in One</title>
+    <title>ROS1 &#8212; All Maps in One</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -36,8 +36,8 @@
     <link rel="shortcut icon" href="_static/me_logo.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="SDK Package" href="SDK.html" />
-    <link rel="prev" title="Costmap Edit &amp; Download (2D)" href="2dmap.html" />
+    <link rel="next" title="ROS2" href="ROS2.html" />
+    <link rel="prev" title="SDK Package" href="SDK.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -90,8 +90,8 @@
    Costmap Edit &amp; Download (2D)
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="3dmap.html">
    Point Cloud Map Edit &amp; Download (3D)
   </a>
  </li>
@@ -100,8 +100,8 @@
    SDK Package
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ROS1.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    ROS1
   </a>
  </li>
@@ -151,7 +151,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/3dmap.rst.txt"><button type="button"
+        <a class="dropdown-buttons" href="_sources/ROS1.rst.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.rst</button></a>
         <!-- Download PDF via print -->
@@ -190,26 +190,39 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#edit">
-   Edit
+  <a class="reference internal nav-link" href="#pre-requirements">
+   Pre-requirements
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#download-costmap">
-   Download Costmap
+  <a class="reference internal nav-link" href="#installation">
+   Installation
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#download-via-site">
-     Download via site
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#api-fetch-map">
-     API Fetch Map
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-use">
+   How to use
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-it-works">
+   How it works
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#published-topics">
+   Published Topics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contributing">
+   Contributing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#license">
+   License
+  </a>
  </li>
 </ul>
 
@@ -221,7 +234,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Point Cloud Map Edit & Download (3D)</h1>
+                <h1>ROS1</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -232,26 +245,39 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#edit">
-   Edit
+  <a class="reference internal nav-link" href="#pre-requirements">
+   Pre-requirements
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#download-costmap">
-   Download Costmap
+  <a class="reference internal nav-link" href="#installation">
+   Installation
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#download-via-site">
-     Download via site
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#api-fetch-map">
-     API Fetch Map
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-use">
+   How to use
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-it-works">
+   How it works
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#published-topics">
+   Published Topics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contributing">
+   Contributing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#license">
+   License
+  </a>
  </li>
 </ul>
 
@@ -262,82 +288,83 @@
             
               <div>
                 
-  <div class="section" id="point-cloud-map-edit-download-3d">
-<h1>Point Cloud Map Edit &amp; Download (3D)<a class="headerlink" href="#point-cloud-map-edit-download-3d" title="Permalink to this headline">¶</a></h1>
-<p>Below is the Point Cloud Map details page.
-We could use the mouse wheel to zoom in/out and right click&amp;drag to move around the map.</p>
-<img alt="_images/pcd_page.png" class="align-center" src="_images/pcd_page.png" />
-<div class="section" id="edit">
-<h2>Edit<a class="headerlink" href="#edit" title="Permalink to this headline">¶</a></h2>
-<p>Coming soon…</p>
-</div>
-<div class="section" id="download-costmap">
-<h2>Download Costmap<a class="headerlink" href="#download-costmap" title="Permalink to this headline">¶</a></h2>
-<p>Our algorithm will generate 2D costmap automatically. The costmap is 100% compatable with robots.</p>
-<div class="section" id="download-via-site">
-<h3>Download via site<a class="headerlink" href="#download-via-site" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p>Click <img alt="download_btn" src="_images/download_btn.png" /> on the right side of map details page</p></li>
-<li><p>Input the lider height to the ground and resolution of the costmap</p>
-<img alt="_images/3d_download_input.png" class="align-center" src="_images/3d_download_input.png" />
-</li>
-<li><p>Click <code class="code docutils literal notranslate"><span class="pre">OK</span></code> to download the <code class="code docutils literal notranslate"><span class="pre">map.zip</span></code> to your PC. The <code class="code docutils literal notranslate"><span class="pre">map.zip</span></code> includes:</p>
+  <div class="section" id="ros1">
+<h1>ROS1<a class="headerlink" href="#ros1" title="Permalink to this headline">¶</a></h1>
+<p>ROS1 package to serve download map in ROS system. The package will use
+<a class="reference external" href="https://github.com/motivedge/python_sdk">SDK</a> to download map data
+from MotivEdge server. Then use ROS <code class="code docutils literal notranslate"><span class="pre">map_server</span></code> to serve the map.</p>
+<div class="section" id="pre-requirements">
+<h2>Pre-requirements<a class="headerlink" href="#pre-requirements" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><code class="code docutils literal notranslate"><span class="pre">map.png</span></code>, the costmap</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">map.yaml</span></code>, the related YAML file of the costmap</p></li>
-</ul>
-</li>
+<li><p>Python &gt;= 3.6</p></li>
+<li><p>An account at <a class="reference external" href="https://portal.motivedge.io/">Portal Motivedge</a></p></li>
+<li><p>ROS distributions: Melodic or Noetic.</p></li>
 </ul>
 </div>
-<div class="section" id="api-fetch-map">
-<h3>API Fetch Map<a class="headerlink" href="#api-fetch-map" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir -p catkin_ws/src
+<span class="nb">cd</span> catkin_ws/src
+git clone https://github.com/motivedge/motivedge_ros.git
+<span class="nb">cd</span> motivedge_ros
+pip3 install -r requirements.txt
+<span class="nb">cd</span> ../..
+catkin build motivedge_ros <span class="c1"># OR catkin_make</span>
+<span class="nb">source</span> devel/setup.sh
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-use">
+<h2>How to use<a class="headerlink" href="#how-to-use" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p><strong>Use our SDK (recommended)</strong>. For more options or details, please check <a class="reference external" href="SDK.html">SDK</a> page.</p>
-<ul>
-<li><p>Click <code class="code docutils literal notranslate"><span class="pre">Profile</span> <span class="pre">&amp;</span> <span class="pre">Token</span></code> link under <img alt="profile_icon" src="_images/profile_icon.png" /> and land to <code class="code docutils literal notranslate"><span class="pre">Profile</span> <span class="pre">&amp;</span> <span class="pre">Token</span></code> page.</p></li>
-<li><p>Click <img alt="access_token_btn" src="_images/access_token_btn.png" /> button and get the token.</p></li>
-<li><p>Install our sdk.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install git+https://github.com/motivedge/python_sdk.git
+<li><p>Get API token from <a class="reference external" href="https://portal.motivedge.io/profile">profile &amp; token page</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">ME_TOKEN</span><span class="o">=</span>&lt;api_token&gt;
 </pre></div>
 </div>
 </li>
-<li><p>Find the target map’s <code class="code docutils literal notranslate"><span class="pre">MAP_ID</span></code> in the map details page.</p></li>
-<li><p>Use <cite>download.py</cite> script which is in our sdk <code class="code docutils literal notranslate"><span class="pre">scripts</span></code> folder to fetch map</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python scripts/download.py -m &lt;map_id&gt; -p &lt;target_folder&gt; --lidar_height &lt;float_value&gt; --resolution &lt;float_value&gt; --me_token &lt;token&gt;
+<li><p>Find the target map’s <code class="code docutils literal notranslate"><span class="pre">MAP_ID</span></code>. We could find this <code class="code docutils literal notranslate"><span class="pre">ID</span></code> at map details page of our portal site. It’s next to the map name.</p></li>
+<li><p>Launch map service client which includes downloading map and <code class="code docutils literal notranslate"><span class="pre">map_server</span></code> map service.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>roslaunch motivedge_ros map_client.launch map_id:<span class="o">=</span>&lt;MAPID&gt;
 </pre></div>
 </div>
-</li>
-</ul>
-</li>
-<li><p>Use <code class="code docutils literal notranslate"><span class="pre">curl</span></code> and <code class="code docutils literal notranslate"><span class="pre">unzip</span></code> fetch map.</p>
-<ul>
-<li><p>Click <code class="code docutils literal notranslate"><span class="pre">Profile</span> <span class="pre">&amp;</span> <span class="pre">Token</span></code> link under <img alt="profile_icon" src="_images/profile_icon.png" /> and land to <code class="code docutils literal notranslate"><span class="pre">Profile</span> <span class="pre">&amp;</span> <span class="pre">Token</span></code> page.</p></li>
-<li><p>Click <img alt="access_token_btn" src="_images/access_token_btn.png" /> button and get the token.</p></li>
-<li><p>Download map via our API <em>(bash code)</em></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -v -o map.zip -X GET <span class="s2">&quot;http://api.motivedge.io/map/MAP_ID/2d?h=0.5&amp;r=0.05&amp;me_token=TOKEN&quot;</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p><code class="code docutils literal notranslate"><span class="pre">MAP_ID</span></code> could be found in the map details page.
-<em>(Next to the map name)</em></p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">me_token</span></code> is the generated token using above button.
-<em>(Required field)</em></p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">h</span></code> means the lidar height to the ground.
-<em>(Required field)</em></p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">r</span></code> means the 2D map resolution for each pixel. Default value is 0.05.
-<em>(Optional field)</em></p></li>
-</ul>
-</li>
-<li><p>The fetched map zip file includes <code class="code docutils literal notranslate"><span class="pre">map.yaml</span></code> and <code class="code docutils literal notranslate"><span class="pre">map.png</span></code> (costmap).
-We could unzip the file <em>(bash code)</em>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>unzip map.zip
-</pre></div>
-</div>
-</li>
-</ul>
 </li>
 </ol>
 </div>
+<div class="section" id="how-it-works">
+<h2>How it works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
+<p>Currently, there are two nodes running in launch file. <code class="code docutils literal notranslate"><span class="pre">map_download.py</span></code> and
+<code class="code docutils literal notranslate"><span class="pre">map_server</span></code>.</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">map_download.py</span></code> node will perform the map downloading and save map files
+locally.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">map_server</span></code> is ROS <a class="reference external" href="http://wiki.ros.org/map_server">package</a>. We pass the
+map yaml file location to it. <code class="code docutils literal notranslate"><span class="pre">map_server</span></code> will perform the robust map service.</p></li>
+</ul>
+</div>
+<div class="section" id="published-topics">
+<h2>Published Topics<a class="headerlink" href="#published-topics" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p><code class="code docutils literal notranslate"><span class="pre">/metapoints_filepath</span></code>: <code class="code docutils literal notranslate"><span class="pre">std_msgs/String</span></code>, published from <code class="code docutils literal notranslate"><span class="pre">map_download.py</span></code>.</p>
+<p>It’s the path of metadata yaml file which includs mark points/paths/blocks information.
+Other nodes could get the path and use <code class="code docutils literal notranslate"><span class="pre">motivedge.Client.read_mark_points</span></code>
+method to read the data inside. Then, clients could save data into database
+or directly publish to robot.</p>
+<p>For costmap generated from 3D map, there is no <code class="code docutils literal notranslate"><span class="pre">metadata.yaml</span></code> file.
+This topic will publish <strong>empty string</strong>.</p>
+</li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">/map_metadata</span></code>: <code class="code docutils literal notranslate"><span class="pre">nav_msgs/MapMetaData</span></code>, published from <code class="code docutils literal notranslate"><span class="pre">map_server</span></code>. It includes the map
+yaml file content. Details please check <code class="code docutils literal notranslate"><span class="pre">map_server</span></code> page, <a class="reference external" href="http://wiki.ros.org/map_server">here</a></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">/map</span></code>: <code class="code docutils literal notranslate"><span class="pre">nav_msgs/OccupancyGrid</span></code>, published from <code class="code docutils literal notranslate"><span class="pre">map_server</span></code>. It includes the map
+yaml file content. Details please check <code class="code docutils literal notranslate"><span class="pre">map_server</span></code> page, <a class="reference external" href="http://wiki.ros.org/map_server">here</a></p></li>
+</ul>
+</div>
+<div class="section" id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h2>
+<p>We love sharing and welcome sharing and contributing. Please submit pull requests or raise issues in our repo.</p>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>It’s under Apache License 2.0 License.</p>
 </div>
 </div>
 
@@ -347,17 +374,17 @@ We could unzip the file <em>(bash code)</em>:</p>
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="2dmap.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="SDK.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Costmap Edit &amp; Download (2D)</p>
+            <p class="prev-next-title">SDK Package</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="SDK.html" title="next page">
+    <a class='right-next' id="next-link" href="ROS2.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">SDK Package</p>
+        <p class="prev-next-title">ROS2</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
